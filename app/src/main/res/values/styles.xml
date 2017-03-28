@@ -10,6 +10,7 @@
 
     <!-- text attribute for ViewPager -->
     <style name="viewPagerTitle">
+<<<<<<< HEAD
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
@@ -22,4 +23,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+=======
+        <item name = "android:textColor">@color/colorAccent</item>
+    </style>
+
+>>>>>>> 9773c8d02c2309535d9f14fb02a6cfb71bd94e24
 </resources>

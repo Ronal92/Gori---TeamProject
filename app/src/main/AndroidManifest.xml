@@ -15,10 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".Test.TestActivity"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+=======
+>>>>>>> 9773c8d02c2309535d9f14fb02a6cfb71bd94e24
     </application>
 
 </manifest>

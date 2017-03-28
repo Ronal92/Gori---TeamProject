@@ -3,5 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+<<<<<<< HEAD
     <string name="title_activity_test">TestActivity</string>
+=======
+>>>>>>> 9773c8d02c2309535d9f14fb02a6cfb71bd94e24
 </resources>
