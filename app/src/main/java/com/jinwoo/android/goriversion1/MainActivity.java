@@ -1,30 +1,21 @@
 package com.jinwoo.android.goriversion1;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
-import android.view.MotionEvent;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -33,11 +24,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.jinwoo.android.goriversion1.Test.CustomPager;
 import com.jinwoo.android.goriversion1.Test.CustomScrollView;
-import com.jinwoo.android.goriversion1.Test.CustomView;
+import com.jinwoo.android.goriversion1.Test.RectangleView;
+import com.jinwoo.android.goriversion1.Test.RadiusImageView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -70,8 +62,9 @@ public class MainActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         txtTitle_y_position = txtTitle.getTop();
         tab_y_position = tab.getTop();
-        scrollView.setTxtTitleForY(txtTitle_y_position);
-        scrollView.setTabForY(tab_y_position);
+        Log.i(TAG,"=========================txtTitle_y_position : " + txtTitle_y_position + ", tab_y_position : " + tab_y_position);
+        scrollView.setTxtTitleForY(txtTitle_y_position + 180);
+        scrollView.setTabForY(tab_y_position + 120);
         super.onWindowFocusChanged(hasFocus);
     }
 
@@ -119,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         four = new FourFragment();
 
         // 탭 레이아웃 & 뷰페이저 초기화
-        ViewPager viewPager = (ViewPager)findViewById(R.id.viewPager);
+        final CustomPager viewPager = (CustomPager)findViewById(R.id.viewPager);
         tab = (TabLayout)findViewById(R.id.tab);
         tab.addTab(tab.newTab().setText("수업 소개"));
         tab.addTab(tab.newTab().setText("장소/시간"));
@@ -134,11 +127,12 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
-
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
-        //tab.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(subTab));
+        tab.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
         subTab.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(subTab));
+
+
 
         //스크롤 뷰
         scrollView = (CustomScrollView)findViewById(R.id.scrollView);
@@ -169,11 +163,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 커스텀 뷰를 담을 프레임아웃
-        CustomView view = new CustomView(this);
+        RectangleView view = new RectangleView(this);
         frameLayout = (FrameLayout)findViewById(R.id.framelayout);
         frameLayout.addView(view);
 
     }
+
+
 
     // 위시리스트 결과를 보여주는 대화상자
     public void showMessage(boolean isChecked){
@@ -197,11 +193,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
     class PagerAdapter extends FragmentStatePagerAdapter {
         final int PAGE_COUNT = 4;
+        private int mCurrentPosition = -1;
 
         public PagerAdapter(FragmentManager fm) {
             super(fm);
+
         }
 
         @Override
@@ -217,12 +217,26 @@ public class MainActivity extends AppCompatActivity {
                 case 3 : fragment = four;
                     break;
             }
+
             return fragment;
         }
 
         @Override
         public int getCount() {
             return PAGE_COUNT;
+        }
+
+        @Override
+        public void setPrimaryItem(ViewGroup container, int position, Object object) {
+            super.setPrimaryItem(container, position, object);
+            if (position != mCurrentPosition) {
+                Fragment fragment = (Fragment) object;
+                CustomPager pager = (CustomPager) container;
+                if (fragment != null && fragment.getView() != null) {
+                    mCurrentPosition = position;
+                    pager.measureCurrentView(fragment.getView());
+                }
+            }
         }
 
     }

@@ -73,88 +73,97 @@
 
             </LinearLayout>
 
-            <ImageView
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:srcCompat="@drawable/test"
-                android:id="@+id/imageView1"
-                android:scaleType="fitXY"
-                android:translationY="@dimen/activity_vertical_margin" />
+                android:layout_height="match_parent">
 
-            <com.jinwoo.android.goriversion1.RadiusImageView
-                android:layout_width="80dp"
-                android:layout_height="70dp"
-                android:src="@drawable/test2"
-                android:id="@+id/imageView2"
-                android:scaleType="centerCrop"
-                android:layout_gravity="center_horizontal" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/test"
+                    android:id="@+id/imageView1"
+                    android:scaleType="fitXY"
+                    android:translationY="@dimen/activity_vertical_margin" />
 
-            <TextView
-                android:text="Ashton / Ashton"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:id="@+id/txtWrite"
-                android:textAlignment="center" />
+                <com.jinwoo.android.goriversion1.Test.RadiusImageView
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test2"
+                    android:id="@+id/imageView2"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_horizontal" />
 
-            <TextView
-                android:text="칼퇴를 위한 실무 엑셀"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:id="@+id/txtTitle"
-                android:textStyle="normal|bold"
-                android:textColor="@android:color/black"
-                android:textAlignment="center" />
+                <TextView
+                    android:text="Ashton / Ashton"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:id="@+id/txtWrite"
+                    android:textAlignment="center" />
 
-            <TextView
-                android:text="New"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textAlignment="center"
-                android:id="@+id/textView7"
-                android:textColor="@color/colorAccent"/>
+                <TextView
+                    android:text="칼퇴를 위한 실무 엑셀"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:id="@+id/txtTitle"
+                    android:textStyle="normal|bold"
+                    android:textColor="@android:color/black"
+                    android:textAlignment="center" />
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView6" />
+                <TextView
+                    android:text="New"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:textAlignment="center"
+                    android:id="@+id/textView7"
+                    android:textColor="@color/colorAccent"/>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/framelayout"/>
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView6" />
 
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView5" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/framelayout"/>
 
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView4" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView5" />
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView3" />
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView2" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView4" />
 
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView1" />
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView3" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView2" />
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/textView1" />
+
+            </LinearLayout>
+
+
 
             <!--<RelativeLayout-->
             <!--android:layout_width="match_parent"-->
@@ -168,86 +177,13 @@
                 app:tabSelectedTextColor="@color/colorAccent"
                 style="@style/viewPagerTitle"/>
 
-            <android.support.v4.view.ViewPager
+            <com.jinwoo.android.goriversion1.Test.CustomPager
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/viewPager"
                 android:layout_below="@+id/tab"/>
 
             <!--</RelativeLayout>-->
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView19" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView21" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView22" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView23" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView24" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView25" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView26" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView27" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView28" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView29" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView90" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/textView31" />
-
 
         </LinearLayout>
 
@@ -275,7 +211,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:id="@+id/checkbox_wishList"
-            android:button="@drawable/checkbox_heart"/>
+            android:button="@drawable/custom_checkbox"/>
 
 
         <ImageButton

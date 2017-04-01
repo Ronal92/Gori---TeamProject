@@ -1,4 +1,4 @@
-package com.jinwoo.android.goriversion1;
+package com.jinwoo.android.goriversion1.Test;
 
 import android.content.Context;
 import android.graphics.Canvas;

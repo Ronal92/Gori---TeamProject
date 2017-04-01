@@ -39,8 +39,9 @@ public class CustomScrollView extends ScrollView {
         this.txtTitle_y_position = txtTitle_y_position;
     }
 
+    // 기준이 되는 탭 지점의 y값 가져오기
     public void setTabForY(float tab_y_position){
-        this.tab_y_position = tab_y_position;
+        this.tab_y_position = tab_y_position ;
     }
 
 
@@ -52,7 +53,7 @@ public class CustomScrollView extends ScrollView {
         int diff_txtTitle = getScrollY() - (int)txtTitle_y_position;
         int diff_tab = getScrollY() - (int)tab_y_position;
 
-        Log.i(TAG,"================================  getScrollY() : " + getScrollY() );
+        Log.i(TAG,"================================  getScrollY() : " + getScrollY() + ", diff_txtTitle : " + diff_txtTitle + ", diff_tab : " + diff_tab);
         if ( diff_txtTitle > 0 && appearListener != null) {
             appearListener.onAppearReached();
         } else if( diff_txtTitle < 0 && destroyListener != null){

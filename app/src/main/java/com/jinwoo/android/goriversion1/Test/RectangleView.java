@@ -14,7 +14,7 @@ import com.jinwoo.android.goriversion1.R;
  *  Line, text, image 가 포함된 커스텀뷰
  */
 
-public class CustomView extends View {
+public class RectangleView extends View {
 
     private static final String TAG = "RAPSTAR";
     Paint grayLine = new Paint();
@@ -28,7 +28,7 @@ public class CustomView extends View {
 
     Bitmap imgLocation, imgNumPple, imgPrice, imgSchedule;
 
-    public CustomView(Context context) {
+    public RectangleView(Context context) {
         super(context);
         ctx = context;
         grayLine.setColor(Color.LTGRAY);
