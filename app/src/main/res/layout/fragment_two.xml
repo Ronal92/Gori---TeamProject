@@ -36,33 +36,17 @@
             android:layout_height="55dp"
             android:id="@+id/txtTwo2"
             android:textSize="18sp"
+            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp" />
 
-        <Button
-            android:text="Button"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTwo1"
-             />
-        <Button
-            android:text="Button"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTwo2"
-            />
 
-        <Button
-        android:text="Button"
-        android:background="@drawable/custom_button"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnTwo3"
-        />
+
+
+            <RadioGroup
+                android:id="@+id/dynamic_radioarea_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
 
 
     </LinearLayout>
@@ -91,31 +75,11 @@
             android:textSize="18sp"
             android:layout_marginLeft="10dp" />
 
-        <Button
-            android:text="Button"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTwo4"
-            />
-        <Button
-            android:text="Button"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTwo5"
-            />
 
-        <Button
-            android:text="Button"
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="10dp"
+        <RadioGroup
+            android:id="@+id/dynamic_radioarea_day"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnTwo6"
-            />
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
@@ -146,7 +110,7 @@
 
         <Button
             android:text="06~08시"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/custom_button_off"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -154,7 +118,7 @@
             />
         <Button
             android:text="10~11시"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/custom_button_off"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -163,7 +127,7 @@
 
         <Button
             android:text="15~17시"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/custom_button_off"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
